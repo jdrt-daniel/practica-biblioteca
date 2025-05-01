@@ -25,7 +25,7 @@ class UpdateLibrosRequest extends FormRequest
     {
         return [
             'titulo' => 'string|max:100',
-            'autor' => 'string|max:50',
+            'autor_id' => 'string',
             'editorial' => 'string|max:150',
             'isbn' => 'string|max:20|unique:libros',
         ];

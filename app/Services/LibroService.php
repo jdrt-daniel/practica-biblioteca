@@ -12,13 +12,12 @@ class LibroService
 
     public function getAll()
     {
-        return Libros::all();
+        return Libros::with('autor')->paginate(10);
     }
 
     public function create(array $data)
     {
         $libro = Libros::create($data);
-        // $this->log("Libro creado: {$libro->id}");
         return $libro;
     }
 
@@ -26,7 +25,6 @@ class LibroService
     {
         $libro = $this->getById($id);
         $libro->update($data);
-        // $this->log("Libro actualizado: {$libro->id}");
         return $libro;
     }
 
@@ -41,7 +39,6 @@ class LibroService
         $libro = Libros::find($id);
 
         if (!$libro) {
-            // $this->log('Libro no encontrado');
             return null;
         }
 

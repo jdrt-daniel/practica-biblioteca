@@ -22,6 +22,9 @@ return new class extends Migration
 
             $table->date('fecha_prestamo');
             $table->date('fecha_devolucion');
+
+            $table->number('estado', 1)->default(1);
+
             $table->timestamps();
         });
     }

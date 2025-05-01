@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('libros', function (Blueprint $table) {
+        Schema::create('autor', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->string('editorial');
-            $table->string('isbn');
-
-            $table->unsignedBigInteger('autor_id');
-            $table->foreign('autor_id')->references('id')->on('autor');
-
+            $table->string('nombre')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('libros');
+        Schema::dropIfExists('autor');
     }
 };

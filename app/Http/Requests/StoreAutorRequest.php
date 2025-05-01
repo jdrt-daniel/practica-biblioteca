@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class StoreLibrosRequest extends FormRequest
+class StoreAutorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,7 @@ class StoreLibrosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'titulo' => 'required|string|max:100',
-            'autor_id' => 'required|string',
-            'editorial' => 'required|string|max:150',
-            'isbn' => 'required|string|max:20|unique:libros',
+            'nombre' => 'required|string|max:50',
         ];
     }
 

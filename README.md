@@ -37,6 +37,8 @@ composer install
 php artisan migrate:fresh --seed
 ```
 
+esto generara datos de prueba, 10 libros, 10 autores y 200 prestamos
+
 5. Run the application:
 
 ```bash

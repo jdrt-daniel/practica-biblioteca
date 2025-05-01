@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Libros extends Model
 {
@@ -14,7 +15,7 @@ class Libros extends Model
 
     protected $fillable = [
         'titulo',
-        'autor',
+        'autor_id',
         'editorial',
         'isbn'
     ];
@@ -23,5 +24,11 @@ class Libros extends Model
     {
         return $this->hasMany(Prestamos::class);
     }
+
+    public function autor(): BelongsTo
+    {
+        return $this->belongsTo(Autor::class, 'autor_id');
+    }
+
 
 }

@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Autor;
+use App\Models\Libros;
+use App\Models\Prestamos;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -21,5 +24,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             'password' => Hash::make('password'),
         ]);
+
+        Autor::factory(10)->create();
+
+        Libros::factory(10)->create();
+
+        Prestamos::factory(200)->create();
+
     }
 }

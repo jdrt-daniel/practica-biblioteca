@@ -71,8 +71,9 @@ class PrestamosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prestamos $prestamos)
+    public function destroy($id)
     {
-        //
+        $deleted = $this->prestamoService->delete($id);
+        return $this->successDelete($deleted);
     }
 }
